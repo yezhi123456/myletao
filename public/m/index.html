@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 在移动端第一步就是要加视口, -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入站点图标.就是在标签上的图片 -->
+    <link rel="icon" href="images/favicon.ico">
+    <!-- Mui的Css -->
+    <link rel="stylesheet" href="./lib/mui//css//mui.css">
+    <!-- 字体图标的Css -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 自己的Less -->
+    <link rel="stylesheet/less" href="./less/index.less">
+    <!-- 编码的Less的JS -->
+    <script src="./lib/less/less.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. 头部 -->
+    <header id="header">
+        <h4>乐淘云购</h4>
+        <a class="fa fa-search" aria-hidden="true"></a>
+    </header>
+    <!-- 2. 轮播图 -->
+    <section id="slide">
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="images/banner9.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner1.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner2.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner3.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner4.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner5.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner6.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner7.png" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner8.jpg" />
+                    </a>
+                </div>
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="images/banner9.png" />
+                    </a>
+                </div>
+               
+                <!--支持循环，需要重复图片节点-->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="images/banner1.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+    </section>
+    <!-- 3. 导航 -->
+    <section id="nav"></section>
+    <!-- 4. 广告 -->
+    <section id="banner"></section>
+    <!-- 5. 品牌专区 -->
+    <section id="brand"></section>
+    <!-- 6. 运动专区 -->
+    <section id="sport"></section>
+    <!-- 7. 女士专区 -->
+    <section id="women"></section>
+    <!-- 8. 男士专区 -->
+    <section id="man"></section>
+    <!-- 9. 底部导航 -->
+    <footer id="footer"></footer>
+    <!-- MUI的JS-->
+    <script src="./lib//mui/js/mui.js"></script>
+    <!-- zepto的JS -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎的JS -->
+    <script src="./lib/artTemplate//template.js"></script>
+    <!-- 自己的JS -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
