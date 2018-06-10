@@ -1,0 +1,40 @@
+@import './base.less';
+#main {
+    
+    .history {
+        padding: 0 10px;
+        .top {
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #666;
+            >a {
+                position: absolute;
+                right: 0;
+                top: 5px;
+                color: #333;
+            }
+        }
+        ul {
+            border: 1px solid #ccc;
+           li {
+               border-bottom: 1px solid #ccc;
+               position: relative;
+                padding: 5px 15px;
+                >a {
+                    font-size: 12px;
+                    color: #333;
+                    position: absolute;
+                    right: 5px;
+                    top: 10px;
+                }
+                >span {
+                    font-size: 12px;
+                }
+                &:last-child {
+                    border-bottom:none;
+                }
+           }
+        }
+    }
+}

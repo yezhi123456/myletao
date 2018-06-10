@@ -44,6 +44,8 @@ Letao.prototype = {
                     id: id,
                 },
                 success: function (backData) {
+                    console.log(backData);
+                    
                     var result = template('categoryRightTem', backData);
                     if (!result) {
                         $('.category-right .mui-row').html('<h5>我写不动了.求你别点了</h5>')
