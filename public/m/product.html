@@ -39,11 +39,11 @@
                             <span>上架时间</span>
                             <span class="fa fa-angle-down"></span>
                         </a>
-                        <a href="#" class="mui-col-xs-3">
+                        <a href="#" class="mui-col-xs-3" data-sort="price" data-sort-style='1'>
                             <span>价格</span>
                             <span class="fa fa-angle-down"></span>
                         </a>
-                        <a href="#" class="mui-col-xs-3">
+                        <a href="#" class="mui-col-xs-3" data-sort="num" data-sort-style='1'>
                             <span>销量</span>
                             <span class="fa fa-angle-down"></span>
                         </a>
@@ -55,96 +55,6 @@
                     </div>
                     <div class="content">
                         <div class="mui-row">
-                            <div class="mui-col-xs-6 nbu">
-                                <a href="#">
-                                    <img src="./images/product.jpg" alt="">
-                                    <p class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
-                                    <p class="product-price">
-                                        <span class="newPrice">
-                                            ¥560.00
-                                        </span>
-                                        <span class="oldPrice">
-                                            ¥888.00
-                                        </span>
-                                    </p>
-                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
-                                </a>
-                            </div>
-                            <div class="mui-col-xs-6 nbu">
-                                <a href="#">
-                                    <img src="./images/product.jpg" alt="">
-                                    <p class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
-                                    <p class="product-price">
-                                        <span class="newPrice">
-                                            ¥560.00
-                                        </span>
-                                        <span class="oldPrice">
-                                            ¥888.00
-                                        </span>
-                                    </p>
-                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
-                                </a>
-                            </div>
-                            <div class="mui-col-xs-6 nbu">
-                                <a href="#">
-                                    <img src="./images/product.jpg" alt="">
-                                    <p class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
-                                    <p class="product-price">
-                                        <span class="newPrice">
-                                            ¥560.00
-                                        </span>
-                                        <span class="oldPrice">
-                                            ¥888.00
-                                        </span>
-                                    </p>
-                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
-                                </a>
-                            </div>
-                            <div class="mui-col-xs-6 nbu">
-                                <a href="#">
-                                    <img src="./images/product.jpg" alt="">
-                                    <p class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
-                                    <p class="product-price">
-                                        <span class="newPrice">
-                                            ¥560.00
-                                        </span>
-                                        <span class="oldPrice">
-                                            ¥888.00
-                                        </span>
-                                    </p>
-                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
-                                </a>
-                            </div>
-                            <div class="mui-col-xs-6 nbu">
-                                <a href="#">
-                                    <img src="./images/product.jpg" alt="">
-                                    <p class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
-                                    <p class="product-price">
-                                        <span class="newPrice">
-                                            ¥560.00
-                                        </span>
-                                        <span class="oldPrice">
-                                            ¥888.00
-                                        </span>
-                                    </p>
-                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
-                                </a>
-                            </div>
-                            <div class="mui-col-xs-6 nbu">
-                                <a href="#">
-                                    <img src="./images/product.jpg" alt="">
-                                    <p class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
-                                    <p class="product-price">
-                                        <span class="newPrice">
-                                            ¥560.00
-                                        </span>
-                                        <span class="oldPrice">
-                                            ¥888.00
-                                        </span>
-                                    </p>
-                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,6 +79,25 @@
             </a>
         </div>
     </footer>
+    <script type="text/html" id="searchTem">
+        {{each data as value i}}
+        <div class="mui-col-xs-6 nbu">
+            <a href="./detail.html?detailid={{value.id}}">
+                <img src="{{value.pic[0].picAddr}}" alt="">
+                <p class="product-name">{{value.proName}} </p>
+                <p class="product-price">
+                    <span class="newPrice">
+                        ¥{{value.price}}&nbsp;
+                    </span>
+                    <span class="oldPrice">
+                        ¥{{value.oldPrice}}
+                    </span>
+                </p>
+                <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+            </a>
+        </div>
+        {{/each}}
+    </script>
     <!-- 引入Mui的JS -->
     <script src="./lib/mui/js/mui.js"></script>
     <!-- 引入zepto的JS -->

@@ -16,7 +16,7 @@ Letao.prototype = {
     addHistory: function () {
         $('.btn-search').click(function () {
             var search = $('.input-search').val();
-            if (search == '') {
+            if (search.trim() == '') {
                 alert('请输入内容');
                 return;
             }
@@ -29,7 +29,7 @@ Letao.prototype = {
             }
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i].search == search) {
-                    window.location.href = './product.html';
+                    window.location.href = './product.html?search='+search;
 
                     return;
                 }
@@ -40,7 +40,7 @@ Letao.prototype = {
             window.localStorage.setItem('searchData', JSON.stringify(arr));
             letao.initHistory();
             $('.input-search').val('');
-            window.location.href = './product.html';
+            window.location.href = './product.html?search='+search;
         })
     },
     initHistory: function () {

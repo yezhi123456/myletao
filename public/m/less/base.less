@@ -48,7 +48,7 @@ body {
             text-align: left;
         }
     }
-    .fa-search {
+    .fa-search,.fa-home {
         position: absolute;
         right: 15px;
         font-size: 18px;
@@ -114,6 +114,13 @@ body {
             padding: 10px;
             .nbu {
                 padding: 10px;
+                .product-name {
+                    text-overflow: -o-ellipsis-lastline;overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
                 a {
                         padding-bottom: 5px;
                         box-shadow: 0 0 10px #ccc;
