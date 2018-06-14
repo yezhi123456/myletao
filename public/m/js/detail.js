@@ -1,6 +1,8 @@
 var letao;
+var productID;
 $(function () {
     letao = new Letao();
+    productID = GetUrlByParamName('detailid');
     letao.initGallery();
     letao.initData();
     letao.initSizeClick();
@@ -21,7 +23,7 @@ Letao.prototype = {
         $.ajax({
             url: '/product/queryProductDetail',
             data: {
-                id: GetUrlByParamName('detailid'),
+                id: productID,
             },
             success: function (backData) {
                 var arr = backData.size.split('-');
@@ -44,6 +46,7 @@ Letao.prototype = {
     },
     initAddCar: function () {
         $('.mui-btn-danger').click(function () {
+            var size = $('.size span.active').html();
             if ($('.size span.active').length == 0) {
                 mui.toast('请选择尺码', {
                     duration: 'long',
@@ -51,6 +54,7 @@ Letao.prototype = {
                 });
                 return;
             }
+            var num = mui('.mui-numbox').numbox().getValue();
             if (mui('.mui-numbox').numbox().getValue() == 0) {
                 mui.toast('请选择数量', {
                     duration: 'short',
@@ -58,25 +62,38 @@ Letao.prototype = {
                 });
                 return;
             }
-            mui.confirm('添加成功,是否前往购物车看看', '温馨提示', ['yes', 'no'], function (btnNum) {
-                if(btnNum.index==0){
-                    mui.toast('正在前往购物车', {
-                        duration: 'short',
-                        type: 'div'
-                    });
-                }else if(btnNum.index==1){
-                    mui.toast('请继续购物', {
-                        duration: 'short',
-                        type: 'div'
-                    });
+            $.ajax({
+                url: '/cart/addCart',
+                type: 'post',
+                data: {
+                    productId: productID,
+                    num: num,
+                    size: size
+                },
+                success: function (backData) {
+                    console.log(backData);
+
+                    if (backData.error) {
+                        window.location.href = './login.html';
+                    } else if (backData.success) {
+                        mui.confirm('添加成功,是否前往购物车看看', '温馨提示', ['yes', 'no'], function (btnNum) {
+                            if (btnNum.index == 0) {
+                                window.location.href = './cars.html';
+                            } else if (btnNum.index == 1) {
+                                mui.toast('请继续购物', {
+                                    duration: 'short',
+                                    type: 'div'
+                                });
+                            }
+
+                        });
+                    }
                 }
-                
-            });
+            })
 
 
         })
     }
-
 }
 
 function GetUrlByParamName(name) {

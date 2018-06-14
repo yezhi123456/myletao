@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入MUI的Css -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入font字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 引入自己的Less -->
+    <link rel="stylesheet/less" href="./less/cars.less">
+    <!-- 引入编辑的Less的Js -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 1. 头部 -->
+    <header id="header">
+        <a href="./product.html" class="fa fa-arrow-left"></a>
+        <h4>购物车</h4>
+        <a href="#" class="fa fa-refresh"></a>
+    </header>
+    <!--  main主体部分 -->
+    <main id="main">
+        <ul class="content">
+
+
+        </ul>
+        <div class="mainfooter">
+            <span>订单总额: $0.00</span>
+            <button type="button" class="mui-btn mui-btn-danger">生成订单</button>
+        </div>
+    </main>
+    <!-- 9. 底部导航 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <a href="./index.html" class="mui-col-xs-3 fa fa-home now ">
+                <span>首页</span>
+            </a>
+            <a href="./category.html" class="mui-col-xs-3 fa fa-bars">
+                <span>分类</span>
+            </a>
+            <a href="#" class="mui-col-xs-3 fa fa-shopping-cart">
+                <span>购物车</span>
+            </a>
+            <a href="./user.html" class="mui-col-xs-3 fa fa-user">
+                <span>会员中心</span>
+            </a>
+        </div>
+    </footer>
+    <script type="text/html" id="carsTem">
+        {{each}}
+        <li class="mui-table-view-cell mui-transitioning">
+            <div class="mui-slider-right mui-disabled" data-id={{$value.id}}>
+                <a href="#" class="mui-btn mui-btn-primary btn-edit" data-num={{$value.num}} data-size={{$value.size}} data-fanwei={{$value.productSize}}>编辑</a>
+                <a href="#" class="mui-btn mui-btn-danger btn-delete">删除</a>
+            </div>
+            <div class="mui-slider-handle mui-navigate-right">
+                <div class="left">
+                    <img src="{{$value.pic[0].picAddr}}" alt="">
+                    <input type="checkbox" class="btn-check" data-price={{$value.price}} data-num={{$value.num}}>
+                </div>
+                <div class="right">
+                    <p class="title">{{$value.proName}}</p>
+                    <p class="price">
+                        <span class="new">${{$value.price}}</span>
+                        <del>${{$value.oldPrice}}</del>
+                        <span class="number">x{{$value.num}}双</span>
+                    </p>
+                    <p class="size">鞋码:&nbsp;{{$value.size}}</p>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+    <!-- 3. 创建编辑尺码和数量的模板 -->
+    <script id="editTmp" type="text/html">
+        <div class="product-size">
+            尺码： {{each arr as value i }}
+            <span class="btn-size">{{value}}</span>{{/each}}
+        </div>
+        <div class="product-num">
+            数量：
+            <span class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='20'>
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input" type="number" value="{{num}}" />
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+
+        </div>
+    </script>
+    <!-- 引入Mui的JS -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto的JS -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板的JS -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 自己的JS -->
+    <script src="./js/cars.js">
+    
+    </script>
+
+
+</body>
+
+</html>
+<script>
+</script>

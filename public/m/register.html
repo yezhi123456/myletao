@@ -11,7 +11,7 @@
     <!-- 引入font字体图标 -->
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
     <!-- 引入自己的Less -->
-    <link rel="stylesheet/less" href="./less/category.less">
+    <link rel="stylesheet/less" href="./less/register.less">
     <!-- 引入编辑的Less的Js -->
     <script src="./lib/less/less.js"></script>
 </head>
@@ -19,29 +19,33 @@
 <body>
     <!-- 1. 头部 -->
     <header id="header">
-        <a href="./index.html" class="fa fa-arrow-left"></a>
-        <form action="" class="form-search">
-            <input type="search" placeholder="请输入你要搜索的鞋子">
-        </form>
-        <a href="./search.html" class="fa fa-search" aria-hidden="true"></a>
+        <a href="./product.html" class="fa fa-arrow-left"></a>
+        <h4>注册</h4>
     </header>
     <!--  main主体部分 -->
     <main id="main">
-        <div class="category-left">
-            <ul>
-
-            </ul>
-        </div>
-        <div class="category-right">
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <!--这里放置真实显示的DOM内容-->
-                    <div class="mui-row">
-                        
-                    </div>
-                </div>
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-clear userName" placeholder="请输入用户名">
             </div>
-        </div>
+            <div class="mui-input-row">
+                <input type="text" class="mui-input-clear mobile " placeholder="请输入手机号">
+            </div>
+            <div class="mui-input-row">
+                <input type="password" class="mui-input-password password1" placeholder="请输入密码">
+            </div>
+            <div class="mui-input-row">
+                <input type="password" class="mui-input-password password2" placeholder="请再次输入密码">
+            </div>
+            <div class="mui-input-row yzm">
+                <input type="text" class="mui-input-clear userName" placeholder="请输入验证码">
+                <button type="button" class="mui-btn mui-btn-primary">获取验证码</button>
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary btn-zhuce">注册</button>
+            
+            </div>
+        </form>
     </main>
     <!-- 9. 底部导航 -->
     <footer id="footer">
@@ -49,10 +53,10 @@
             <a href="./index.html" class="mui-col-xs-3 fa fa-home now ">
                 <span>首页</span>
             </a>
-            <a href="./category.html" class="mui-col-xs-3 fa fa-bars active">
+            <a href="./category.html" class="mui-col-xs-3 fa fa-bars">
                 <span>分类</span>
             </a>
-            <a href="./cars.html" class="mui-col-xs-3 fa fa-shopping-cart">
+            <a href="#" class="mui-col-xs-3 fa fa-shopping-cart">
                 <span>购物车</span>
             </a>
             <a href="./user.html" class="mui-col-xs-3 fa fa-user">
@@ -61,23 +65,6 @@
         </div>
     </footer>
 
-
-    <script type="text/html" id="categoryLeftTem">
-        {{each rows as value i}}
-        <li class="{{i==0?'active':''}}">
-            <a href="#" data-id='{{value.id}}'>{{value.categoryName}}</a>
-        </li>
-        {{/each}}
-    </script>
-    <script type="text/html" id="categoryRightTem">
-        {{each rows as value i}}
-            <a href="#" class="mui-col-xs-4">
-                <img src="{{value.brandLogo}}" alt="">
-                <p>{{value.brandName}}</p>
-            </a>
-        {{/each}}
-    </script>
-
     <!-- 引入Mui的JS -->
     <script src="./lib/mui/js/mui.js"></script>
     <!-- 引入zepto的JS -->
@@ -85,7 +72,10 @@
     <!-- 引入模板的JS -->
     <script src="./lib/artTemplate/template.js"></script>
     <!-- 自己的JS -->
-    <script src="./js/category.js"></script>
+    <script src="./js/register.js">
+    </script>
+
+
 </body>
 
 </html>
